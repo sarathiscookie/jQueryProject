@@ -21,8 +21,21 @@
         <div class="row">
             <h4><b>2: Iterates over arrays and objects(each)</b></h4>
             <h5><b>Array elements: "foo", "bar", "baz"</b></h5>
-            <ul id="list">
-            </ul>
+            <div>
+                <b>Result:</b>
+                <ul id="list">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div clas="col-md-12">
+        <div class="row">
+            <h4><b>3: Returns a value's index in an array. if the value is not in the array -1 is the result</b></h4>
+            <h5><b>Array elements: [ 1, 2, 3, 5 ]</b></h5>
+            <div>
+                <b>Result:</b>
+                <div id="arrayResult"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -45,6 +58,13 @@
         $.each(["foo", "bar", "baz"], function(idx, val){
             $("#list").append('<li id="'+idx+'">'+val+'</li>');
         })
+
+        var array = [ 1, 2, 3, 5 ];
+        if($.inArray(3, array) != -1){
+            var data = $.inArray(3, array);
+            $("#arrayResult").append('<div>'+data+'</div>');
+        }
+
     });
 </script>
 </body>
