@@ -12,15 +12,17 @@
 <div class="container">
     <div clas="col-md-12">
         <div class="row">
-            <h4><b>1: Removes leading and trailing whitespace(trim)</b></h4>
-            <h5><b>eg: ("    lots of extra whitespace    ")</b></h5>
+            <h4>$.trim()</h4>
+            <h4>Removes leading and trailing whitespace(trim)</h4>
+            <h5>eg: ("    lots of extra whitespace    ")</h5>
             <p id="trim"></p>
         </div>
     </div>
     <div clas="col-md-12">
         <div class="row">
-            <h4><b>2: Iterates over arrays and objects(each)</b></h4>
-            <h5><b>Array elements: "foo", "bar", "baz"</b></h5>
+            <h4>$.each()</h4>
+            <h4>Iterates over arrays and objects(each)</h4>
+            <h5>Array elements: "foo", "bar", "baz"</h5>
             <div>
                 <b>Result:</b>
                 <ul id="list">
@@ -30,11 +32,22 @@
     </div>
     <div clas="col-md-12">
         <div class="row">
-            <h4><b>3: Returns a value's index in an array. if the value is not in the array -1 is the result</b></h4>
-            <h5><b>Array elements: [ 1, 2, 3, 5 ]</b></h5>
+            <h4><b>$.inArray()</b></h4>
+            <h4>Returns a value's index in an array. if the value is not in the array -1 is the result</h4>
+            <h5>Array elements: [ 11, 22, 33, 55 ]</h5>
             <div>
                 <b>Result:</b>
                 <div id="arrayResult"></div>
+            </div>
+        </div>
+    </div>
+    <div clas="col-md-12">
+        <div class="row">
+            <h4><b>$.extend()</b></h4>
+            <h5><b>Changes the properties of the first object using the properties of subsequent objects:</b></h5>
+            <div>
+                <b>Result:</b>
+                <div id="extendResult"></div>
             </div>
         </div>
     </div>
@@ -59,12 +72,16 @@
             $("#list").append('<li id="'+idx+'">'+val+'</li>');
         })
 
-        var array = [ 1, 2, 3, 5 ];
-        if($.inArray(3, array) != -1){
-            var data = $.inArray(3, array);
+        var array = [ 11, 22, 33, 55 ];
+        if($.inArray(33, array) != -1){
+            var data = $.inArray(33, array);
             $("#arrayResult").append('<div>'+data+'</div>');
         }
 
+        var firstObject    = {a: 'foo', b: 'bar' };
+        var secondObject   = {b: 'joo'};
+        var newObject   = $.extend(firstObject, secondObject);
+        $("#extendResult").append('<div>firstObject:'+firstObject.b+'</div><br><div>newObject:'+newObject.b+'</div>')
     });
 </script>
 </body>
