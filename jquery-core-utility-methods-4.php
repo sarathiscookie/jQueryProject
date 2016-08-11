@@ -51,6 +51,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 <!-- Latest compiled and minified JavaScript -->
@@ -64,24 +65,35 @@
 
 <script>
     $(function(){
+        /*$.trim()*/
         var trim    = "    lots of extra whitespace    ";
         var trimmed = $.trim(trim);
         $("#trim").html("<b> Result : </b>"+trimmed);
 
+        /*$.each()*/
         $.each(["foo", "bar", "baz"], function(idx, val){
             $("#list").append('<li id="'+idx+'">'+val+'</li>');
         })
 
+        /*$.inArray()*/
         var array = [ 11, 22, 33, 55 ];
         if($.inArray(33, array) != -1){
+            if($.type(3) === 'number')
+            {
+                alert('number');
+            }
             var data = $.inArray(33, array);
             $("#arrayResult").append('<div>'+data+'</div>');
         }
 
+        /*$.extend()*/
         var firstObject    = {a: 'foo', b: 'bar' };
         var secondObject   = {b: 'joo'};
-        var newObject   = $.extend(firstObject, secondObject);
+        var newObject      = $.extend(firstObject, secondObject);
         $("#extendResult").append('<div>firstObject:'+firstObject.b+'</div><br><div>newObject:'+newObject.b+'</div>')
+
+        /*$.proxy()*/
+
     });
 </script>
 </body>
